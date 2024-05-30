@@ -27,8 +27,8 @@ class CSVConfig(Dialect):
 
 class ArgList():
     """
-    We are going to iterate through OFXTools'
-    STMTTRN attributes for a list of possible
+    Iterate through OFXTools' STMTTRN
+    attributes for a list of possible
     values
     """
 
@@ -45,9 +45,7 @@ class ArgList():
 
 def cli_arg_constructor() -> ArgumentParser:
     """
-    We are going to iterate through OFXTools'
-    STMTTRN attributes for a list of possible
-    values
+    Dynamically create CLI enabling flags
     """
 
     arglist = ArgList()
@@ -73,14 +71,12 @@ def to_csv(arglist: ArgList):
     for key in arg_dict:
         if arg_dict[key] == True :
             arg_list.append(key)
-    print (arg_list)
 
     parser = OFXTree()
     with open(arglist.source_file, 'rb') as fileobj:
         parser.parse(fileobj)
         ofx = parser.convert()
 
-        csv_list = []
         statements = ofx.statements
         transactions = statements[0].transactions
 
@@ -93,10 +89,6 @@ def to_csv(arglist: ArgList):
                 row = []
                 for field in arg_list:
                     row.append(str(getattr(trx, field)))
-                    #print(str(trx.fitid) + ',', end='')
-                    #print(str(trx.trnamt) + ',', end='')
-                    #print(str(trx.name) + ',', end='')
-                    #print(str(trx.memo) + ',', end='\n')
                 csvwriter.writerow(row)
 
 def main():
