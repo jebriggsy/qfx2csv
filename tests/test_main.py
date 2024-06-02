@@ -4,7 +4,7 @@ import csv
 import os
 from src.qfx2csv.qfx2csv import to_csv, ArgList, CSVConfig
 
-TESTDATA = os.getcwd() + "/data/"
+TESTDATA = os.getcwd() + "/tests/data/"
 
 
 # Doesn't have OFX headers
