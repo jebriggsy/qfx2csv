@@ -1,7 +1,10 @@
 import pytest
 import ofxtools
 import csv
+import sys
 from src.qfx2csv.qfx2csv import to_csv, ArgList, CSVConfig
+
+sys.path.insert(0, ".")
 
 
 # Doesn't have OFX headers
