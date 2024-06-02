@@ -1,0 +1,83 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:160
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:NONE
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:15D8770E-6DE2-400C-928C-D405FC91EA7A
+
+<OFX>
+    <SIGNONMSGSRSV1>
+        <SONRS>
+            <STATUS>
+                <CODE>0
+                <SEVERITY>INFO
+                <MESSAGE>SUCCESS
+            </STATUS>
+            <DTSERVER>20240528224341.954[-7:PDT]
+            <LANGUAGE>ENG
+            <FI>
+                <ORG>NA
+                <FID>000000001
+            </FI>
+        </SONRS>
+    </SIGNONMSGSRSV1>
+    <BANKMSGSRSV1>
+        <STMTTRNRS>
+            <TRNUID>E03D7D45-8799-41BB-BF94-0EFEBF7716DC
+            <STATUS>
+                <CODE>0
+                <SEVERITY>INFO
+                <MESSAGE>SUCCESS
+            </STATUS>
+            <STMTRS>
+                <CURDEF>USD
+                <BANKACCTFROM>
+                    <BANKID>000000001
+                    <ACCTID>000000001
+                    <ACCTTYPE>CHECKING
+                </BANKACCTFROM>
+                <BANKTRANLIST>
+                    <DTSTART>20240501000000.000
+                    <DTEND>20240528224341.961[-7:PDT]
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT
+                        <DTPOSTED>20240429070000.000
+                        <DTAVAIL>20240429070000.000
+                        <TRNAMT>-23.17
+                        <FITID>00000001*-0000*42**Withdrawal
+                        <NAME>Withdrawal
+                        <MEMO>Withdrawal
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CASH
+                        <DTPOSTED>20240429070000.000
+                        <DTAVAIL>20240429070000.000
+                        <TRNAMT>-100.00
+                        <FITID>00000001*-10000*0**ACH Debit
+                        <NAME>ACH Debit
+                        <MEMO>ACH Debit
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CASH
+                        <DTPOSTED>20240429070000.000
+                        <DTAVAIL>20240429070000.000
+                        <TRNAMT>-436.67
+                        <FITID>00000001*-00001*0**ACH Debit ACH PAY
+                        <NAME>ACH Debit ACH PAY
+                        <MEMO>ACH Debit ACH PAY ACH00000001
+                    </STMTTRN>
+                </BANKTRANLIST>
+                <LEDGERBAL>
+                    <BALAMT>5.00<DTASOF>20240528224343.004[-7:PDT]
+                </LEDGERBAL>
+                <AVAILBAL>
+                    <BALAMT>5.00
+                    <DTASOF>20240528224343.004[-7:PDT]
+                </AVAILBAL>
+            </STMTRS>
+        </STMTTRNRS>
+    </BANKMSGSRSV1>
+</OFX>
