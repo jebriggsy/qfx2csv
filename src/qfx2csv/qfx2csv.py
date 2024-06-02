@@ -77,8 +77,6 @@ def to_csv(arglist: ArgList):
     arg_dict = vars(arglist)
     arg_list = []
 
-    print(arg_dict)
-
     for key in arg_dict:
         if arg_dict[key] is True:
             arg_list.append(key)
@@ -101,9 +99,7 @@ def to_csv(arglist: ArgList):
             for trx in transactions:
                 row = []
                 for field in arg_list:
-                    print(field)
                     row.append(str(getattr(trx, field)))
-                    print(field)
                 csvwriter.writerow(row)
 
 
