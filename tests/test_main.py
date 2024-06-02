@@ -1,16 +1,16 @@
 import pytest
 import ofxtools
 import csv
-import sys
+import os
 from src.qfx2csv.qfx2csv import to_csv, ArgList, CSVConfig
 
-sys.path.insert(0, ".")
+TESTDATA = os.getcwd() + "/data/"
 
 
 # Doesn't have OFX headers
 def test_wrong_source_file_type():
     arglist = ArgList()
-    arglist.source_file = "data/notofx.gif"
+    arglist.source_file = TESTDATA + "notofx.gif"
     arglist.trntype = True
     arglist.dtposted = True
     arglist.trnamt = True
@@ -22,7 +22,7 @@ def test_wrong_source_file_type():
 # Doesn't have transactions, what we are actually converting
 def test_wrong_ofx_file():
     arglist = ArgList()
-    arglist.source_file = "data/notrans.ofx"
+    arglist.source_file = TESTDATA + "notrans.ofx"
 
     with pytest.raises((IndexError, TypeError)):
         to_csv(arglist)
@@ -30,14 +30,14 @@ def test_wrong_ofx_file():
 
 def test_convert():
     arglist = ArgList()
-    arglist.source_file = "data/stmtrs-160.ofx"
+    arglist.source_file = TESTDATA + "stmtrs-160.ofx"
     arglist.trntype = True
     arglist.trnamt = True
     arglist.dtposted = True
 
     to_csv(arglist)
 
-    with open("data/stmtrs-160.ofx.csv", newline="") as csvfile:
+    with open(TESTDATA + "stmtrs-160.ofx.csv", newline="") as csvfile:
         reader = csv.DictReader(csvfile, dialect=CSVConfig)
         for row in reader:
             assert row["dtposted"] == "2024-04-29 07:00:00+00:00"
