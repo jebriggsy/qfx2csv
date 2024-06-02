@@ -1,3 +1,5 @@
 hatch>=1.12.0
 ofxtools>=0.9.5
 pre-commit>=3.3.3
+pytest>=7.4.3
+ruff>=0.4.7
