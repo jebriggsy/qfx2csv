@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend  = "hatchling.build"
+
+[project]
+name = "ofx_converter"
+version = "0.0.1"
+authors = [
+    {name = "Jacob Briggs", email = "jebriggsy@protonmail.com"},
+]
+description = "Tool to convert OFX and QFX files to more widely usable formats"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Topic :: Office/Business :: Financial :: Accounting"
+]
+dependencies = [
+    "ofxtools >= 0.9.5"
+]
+license = "GPL-3.0-or-later"
+keywords = ["ofx", "qfx", "csv", "json", "convert", "bank", "banking", "finance", "accounting", "quickbooks", "quicken", "gnucash", "firefly", "quick", "connect"]
+
+[project.scripts]
+ofx2csv = "qfxtocsv:main"
+
+[project.urls]
+Homepage = "https://github.com/jebriggsy/qfx2csv"
+Issues = "https://github.com/jebriggsy/qfx2csv/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "doctest"
+]

@@ -1,0 +1,3 @@
+hatch>=1.12.0
+ofxtools>=0.9.5
+pre-commit>=3.3.3
