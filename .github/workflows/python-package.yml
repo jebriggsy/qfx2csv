@@ -30,8 +30,8 @@ jobs:
         pip install -r requirements-dev.txt
     - name: Lint and format withruff
       run: |
-        ruff check --output-format=github
-        ruff format --output-format-github
+        ruff check --output-format=github --fix
+        ruff format
     - name: Pytest
       run: |
         pytest
